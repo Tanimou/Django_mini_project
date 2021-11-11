@@ -1,0 +1,16 @@
+ <!-- we're gonna extends this file to base.html-->
+{% extends "base.html" %} 
+
+{%block content%}
+ <!-- we surround code as content then it will be automatically transferred in the base.html
+  as this file is an extension of base.html. That means that everything inside this file is automatically
+  transferred to the base.html-->
+<h1>Products</h1>
+<ul>
+    <!-- as we pass our products dictionary we can iterate trough each product -->
+    <!-- this is called a template tag -->
+    {% for product in products %}
+    <li>{{product.name}} (${{product.price}})</li>
+    {% endfor %}
+</ul>
+{%endblock%}
